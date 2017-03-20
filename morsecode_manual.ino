@@ -1,3 +1,4 @@
+//Made by Vladimir Krsmanovic
 const int buttonPin = 2;    
 const int ledPin = 13;      
 const int buzzer = 9;
@@ -30,7 +31,7 @@ void setup()
   
   Serial.println("Welcome to Arduino-Uno morse machine");
   Serial.println("Using these values print out your message in morse and read out the message in english in the serial monitor");
-  Serial.println("I Gledajte rezultat na ekranu");
+  Serial.println("https://goo.gl/images/R4AIsW morse code values for learing");
 
   while(!digitalRead(buttonPin))
     ;
@@ -45,9 +46,15 @@ void loop() {
   
   if (buttonState && lastButtonState)       // basic state machine depending on the state of the signal from the button
   {
-    ++signal_length;                // best use for the measuring of signal_length would be use of the millis() but this was used  for simplicity 
-    tone(buzzer, 2000); 
-    
+    ++signal_length;       
+    if (signal_length<2*pause_value)        //this help to notice that there is a change in the signal length aka that its not a dot anymore but a dash
+    {                                       // best use for the measuring of signal_length would be use of the millis() but this was used  for simplicity 
+    tone(buzzer, 1500) ;
+    }
+    else
+    {
+      tone(buzzer, 1000) ;
+      }
   }
   else if(!buttonState && lastButtonState)          //this part of the code happens when the button is released and it send either * or - into the buffer
   {
@@ -90,8 +97,8 @@ void loop() {
   delay(1);
 }
 void printaj(String prevodilac)   //ugly part of the code but it works fine
-{  
-
+{                                 //compare morse string to known morse values and print out the letter or a number 
+                                  //the code is written based on the international morse code, one thing i changed is that insted of typing a special string to end the line it happens with enough delay  
   if (prevodilac=="*-")
     Serial.print("A");
   else if (prevodilac=="-***")  
