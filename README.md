@@ -1,2 +1,2 @@
 # Morse-code-manual
-Morse cod ewith button input, translated into english
+Morse code with button input, translated into english
