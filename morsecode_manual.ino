@@ -7,10 +7,13 @@ int ledState = HIGH;
 int buttonState = LOW;             
 int lastButtonState = LOW;  
 int doesitwork = LOW;  // variable used for debuging early versions of the code
+int slovo=0;
 
 int pause_value = 250;  // depending on your skill and how fast your fingers are you can change this value to make typing a message faster or slower
 long signal_length = 0;
 long pause = 0;
+
+String database[36]={"*-","-***","-*-*","-**","*","**-*","--*","****","**","*---","-*-","*-**","--","-*","---","*--*","--*-","*-*","***","-","**-","***-","*--","-**-","-*--","--**","*----","**---","***--","****-","*****","-****","--***","---**","----*","-----"};
 
 String morse = "";
 String dash = "-";
@@ -177,3 +180,26 @@ void printaj(String prevodilac)   //ugly part of the code but it works fine
     
   prevodilac=""; 
 }
+
+void printb(String prevodilac)
+{
+  slovo=0;
+  for (int i = 1; i<35; i++)
+    {
+      if (prevodilac==database[i])
+      {
+         if (i<26)        
+         slovo=65+i;
+          
+         else if (i>26) 
+         slovo=48+i-27;
+         
+         break; 
+      }
+    }
+    Serial.print(slovo);
+    Serial.print(" ");
+
+}
+
+
