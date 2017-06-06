@@ -1,0 +1,33 @@
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\obj\Debug\WindowsApplication3.vbprojResolveAssemblyReference.cache
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\obj\Debug\WindowsApplication3.vbproj.GenerateResource.Cache
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\bin\Debug\Lan.exe
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\bin\Debug\Lan.pdb
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\bin\Debug\Lan.xml
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.Form1.resources
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.Resources.resources
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.exe
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.xml
+c:\users\larigoldman\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\bin\Debug\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\bin\Debug\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\bin\Debug\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\obj\Debug\WindowsApplication3.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.Form1.resources
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\obj\Debug\Lan.Resources.resources
+C:\Users\larigoldman\Desktop\Lan\WindowsApplication3\WindowsApplication3\obj\Debug\WindowsApplication3.vbproj.GenerateResource.Cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Debug\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Debug\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Debug\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Debug\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Debug\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Debug\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Debug\WindowsApplication3.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Debug\Lan.Form1.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Debug\Lan.Resources.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Debug\WindowsApplication3.vbproj.GenerateResource.Cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Debug\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Debug\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Debug\Lan.pdb

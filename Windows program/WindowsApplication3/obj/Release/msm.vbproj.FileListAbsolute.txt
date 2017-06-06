@@ -1,0 +1,20 @@
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\mcm.Form1.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\mcm.Resources.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\msm.vbproj.GenerateResource.Cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Release\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Release\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Release\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\msm.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\obj\Release\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\obj\Release\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\obj\Release\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\bin\Release\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\bin\Release\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\bin\Release\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\obj\Release\msm.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\obj\Release\mcm.Form1.resources
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\obj\Release\mcm.Resources.resources
+C:\Users\larigoldman\Desktop\msm\WindowsApplication3\obj\Release\msm.vbproj.GenerateResource.Cache

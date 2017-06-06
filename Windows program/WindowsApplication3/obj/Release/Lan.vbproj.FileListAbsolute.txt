@@ -1,0 +1,24 @@
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\bin\Release\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\bin\Release\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\bin\Release\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Release\Lan.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Release\Lan.Form1.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Release\Lan.Resources.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Release\Lan.vbproj.GenerateResource.Cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Release\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Release\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\obj\Release\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1\WindowsApplication3\bin\Release\Lan.ico
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Lan.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Lan.Form1.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Lan.Resources.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Lan.vbproj.GenerateResource.Cache
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Release\Lan.exe
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Release\Lan.pdb
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\bin\Release\Lan.xml
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\mcm.Form1.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\mcm.Resources.resources
+C:\Users\larigoldman\Desktop\Lan\Lan_1.1 - Copy\WindowsApplication3\obj\Release\Morse Code Machine.xml
