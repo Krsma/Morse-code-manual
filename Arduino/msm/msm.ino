@@ -14,21 +14,25 @@ void setup(){
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(ledPin, OUTPUT);
   pinMode(buzzer, OUTPUT);
-  
+  digitalWrite(ledPin, HIGH);
+  tone(buzzer, 1500);
+  delay(200);
+  digitalWrite(ledPin, LOW);
+  noTone(buzzer);
 }
 
 void loop() {
-  pause_value = map(analogRead(A0), 0, 1023, 85, 300);
+  pause_value = map(analogRead(A0), 0, 1023, 70, 300);
   buttonState = !digitalRead(buttonPin);
   
   if (buttonState && lastButtonState){
     signal_length++;       
     if (signal_length<2*pause_value){
-    tone(buzzer, 1500) ;
+    tone(buzzer, 1500);
     analogWrite(ledPin, 255);
     }
     else{
-      tone(buzzer, 1000) ;
+      tone(buzzer, 1000);
       analogWrite(ledPin, 50);
       }
   }
