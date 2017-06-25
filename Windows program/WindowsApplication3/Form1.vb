@@ -1,4 +1,4 @@
-﻿Imports System
+Imports System
 Imports System.ComponentModel
 Imports System.Threading
 Imports System.IO.Ports
@@ -13,7 +13,8 @@ it's a long click.
 You can adjust the difficulty using the potentiometer.
 
 "
-    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+    Dim exm As String
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs)
         ToolStripComboBox1.Items.Clear()
         myPort = IO.Ports.SerialPort.GetPortNames()
         For i = 0 To UBound(myPort)
@@ -31,7 +32,6 @@ You can adjust the difficulty using the potentiometer.
 
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
         SerialPort1.Close()
-        ToolStripButton2.Enabled = True
         ToolStripButton3.Enabled = False
         Timer1.Stop()
         ToolStripLabel4.Text = "Not Connected"
@@ -58,12 +58,16 @@ You can adjust the difficulty using the potentiometer.
         Catch ex As TimeoutException
             Return "Error: Serial Port read timed out."
         Catch ex As Exception
-            SerialPort1.Close()
-            ToolStripButton2.Enabled = True
+            exm = ex.Message
+            Try
+                SerialPort1.Close()
+            Catch nmn As Exception
+                exm = "USB device dissconnected"
+            End Try
             ToolStripButton3.Enabled = False
             Timer1.Stop()
             ToolStripLabel4.Text = "Not connected"
-            MsgBox("Disconnected." & vbCrLf & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Disconnected." & vbCrLf & exm, MsgBoxStyle.Critical)
         End Try
 
     End Function
@@ -91,7 +95,6 @@ You can adjust the difficulty using the potentiometer.
                 SerialPort1.StopBits = IO.Ports.StopBits.One
                 SerialPort1.DataBits = 8
                 SerialPort1.Open()
-                ToolStripButton2.Enabled = False
                 ToolStripButton3.Enabled = True
                 Timer1.Start()
                 ToolStripLabel4.Text = "Connected"
@@ -141,14 +144,14 @@ You can adjust the difficulty using the potentiometer.
         End If
     End Sub
 
-    Private Sub Form1_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
+    Private Sub Form1_GotFocus(sender As Object, e As EventArgs) Handles MyBase.GotFocus
         If SerialPort1.IsOpen Then
             RichTextBox1.Focus()
         End If
     End Sub
 
     Private Sub RichTextBox1_GotFocus(sender As Object, e As EventArgs) Handles RichTextBox1.GotFocus
-        RichtextBox1.SelectionStart = RichtextBox1.Text.Length + 1
+        RichTextBox1.SelectionStart = RichTextBox1.Text.Length + 1
     End Sub
 
     Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
@@ -173,5 +176,13 @@ You can adjust the difficulty using the potentiometer.
             ToolStripTextBox1.Text = 100
             ToolStripTextBox1.SelectionStart = ToolStripTextBox1.Text.Length + 1
         End If
+    End Sub
+
+    Private Sub ToolStripComboBox1_Click(sender As Object, e As EventArgs) Handles ToolStripComboBox1.Click
+        ToolStripComboBox1.Items.Clear()
+        myPort = IO.Ports.SerialPort.GetPortNames()
+        For i = 0 To UBound(myPort)
+            ToolStripComboBox1.Items.Add(myPort(i))
+        Next
     End Sub
 End Class
