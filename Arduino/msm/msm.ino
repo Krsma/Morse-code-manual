@@ -60,7 +60,7 @@ void loop() {
       cheker = false;
       morse = "";
     }
-    if ((pause > 15*pause_value) && linecheker){
+    if (pause > 15*pause_value && linecheker){
       linecheker = false;
     }
   }
