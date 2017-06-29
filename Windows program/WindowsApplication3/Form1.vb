@@ -1,18 +1,34 @@
-Imports System
-Imports System.ComponentModel
-Imports System.Threading
-Imports System.IO.Ports
 Public Class Form1
-    Public Declare Function GetAsyncKeyState Lib "user32.dll" (ByVal vKey As Int32) As UShort
     Dim myPort As Array
-    Dim message As String = "Using the values on the right
-you can write letters via the button on the device.
-The circle is a short click, and when you hold the button
-for a longer period and the sound on the buzzer changes,
-it's a long click. 
+    Dim msg_en As String = "Using the values on the right you can write letters and numbers via the button on the device.
+The circle is a short click and when you hold the button for a longer period and the sound on the buzzer changes, it's a long click (dash). 
 You can adjust the difficulty using the potentiometer.
 
 "
+    Dim msg_srb As String = "Koristeći vrednosti na desnoj strani ekrana možete napisati slova i brojeve pomoću prekidača na uređaju. 
+Krug je kratak klik, a kada držite prekidač duže vreme i čujete da se zvuk na uređaju promenio, to je dug klik (crta).
+Možete podesiti težinu koristeći potenciometar.
+
+"
+    Dim dscnt_srb As String = "Otkači se"
+    Dim usetxt_srb As String = "Koristi tekst"
+    Dim fontlbl_srb As String = "Veličina fonta"
+    Dim setbnt_srb As String = "Podesi"
+    Dim langlbl_srb As String = "Jezik"
+    Dim connlbl_nc_srb As String = "Nije zakačen"
+    Dim connlbl_no_srb As String = "Zakačen"
+    Dim form_srb As String = "Morze kod"
+    Dim dscnt_en As String = "Dissconnect"
+    Dim fontlbl_en As String = "Font size"
+    Dim setbnt_en As String = "Set"
+    Dim langlbl_en As String = "Laguage"
+    Dim connlbl_nc_en As String = "Not connected"
+    Dim connlbl_no_en As String = "Connected"
+    Dim usetxt_en As String = "Use text"
+    Dim form_en As String = "Morse code"
+    Dim connlbl_no_txt As String
+    Dim connlbl_nc_txt As String
+    Dim message As String
     Dim exm As String
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs)
         ToolStripComboBox1.Items.Clear()
@@ -27,17 +43,26 @@ You can adjust the difficulty using the potentiometer.
             ToolStripComboBox1.Items.Add(myPort(i))
         Next
         RichTextBox1.Font = New Font(RichTextBox1.Font.Name, CInt(ToolStripTextBox1.Text), FontStyle.Regular)
+        If usetxt.Checked Then RichTextBox1.Text = message
+        ToolStripComboBox2.Items.Add("Srpski")
+        ToolStripComboBox2.Items.Add("English")
+        ToolStripComboBox2.SelectedIndex = 0
+        connlbl_nc_txt = connlbl_nc_srb
+        connlbl_no_txt = connlbl_no_srb
+        message = msg_srb
+        RichTextBox1.ContextMenuStrip = ContextMenuStrip1
+        usetxt.Checked = True
         RichTextBox1.Text = message
     End Sub
 
-    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+    Private Sub dscnt_Click(sender As Object, e As EventArgs) Handles dscnt.Click
         SerialPort1.Close()
-        ToolStripButton3.Enabled = False
+        dscnt.Enabled = False
         Timer1.Stop()
-        ToolStripLabel4.Text = "Not Connected"
+        connlbl.Text = connlbl_nc_txt
         ToolStripComboBox1.SelectedIndex = -1
         RichTextBox1.Clear()
-        RichTextBox1.Text = message
+        If usetxt.Checked Then RichTextBox1.Text = message
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim receivedData As String
@@ -64,10 +89,10 @@ You can adjust the difficulty using the potentiometer.
             Catch nmn As Exception
                 exm = "USB device dissconnected"
             End Try
-            ToolStripButton3.Enabled = False
+            dscnt.Enabled = False
             Timer1.Stop()
-            ToolStripLabel4.Text = "Not connected"
-            MsgBox("Disconnected." & vbCrLf & exm, MsgBoxStyle.Critical)
+            connlbl.Text = connlbl_nc_txt
+            MsgBox(exm, MsgBoxStyle.Critical)
         End Try
 
     End Function
@@ -76,7 +101,7 @@ You can adjust the difficulty using the potentiometer.
         ToolStripTextBox1.SelectAll()
     End Sub
 
-    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles setbtn.Click
         RichTextBox1.Font = New Font(RichTextBox1.Font.Name, CInt(ToolStripTextBox1.Text), FontStyle.Regular)
         If SerialPort1.IsOpen Then
             RichTextBox1.Focus()
@@ -95,12 +120,13 @@ You can adjust the difficulty using the potentiometer.
                 SerialPort1.StopBits = IO.Ports.StopBits.One
                 SerialPort1.DataBits = 8
                 SerialPort1.Open()
-                ToolStripButton3.Enabled = True
+                dscnt.Enabled = True
                 Timer1.Start()
-                ToolStripLabel4.Text = "Connected"
+                connlbl.Text = connlbl_no_txt
+                If usetxt.Checked Then RichTextBox1.Text = message
             Catch ex As Exception
-                MsgBox("Cannot connect" & vbCrLf & ex.Message, MsgBoxStyle.Critical)
-                ToolStripLabel4.Text = "Not Connected"
+                MsgBox(ex.Message, MsgBoxStyle.Critical, "Cannot connect")
+                connlbl.Text = connlbl_nc_txt
             End Try
             If SerialPort1.IsOpen = True Then
                 RichTextBox1.Focus()
@@ -113,7 +139,7 @@ You can adjust the difficulty using the potentiometer.
         If SerialPort1.IsOpen Then
             If e.KeyCode = Keys.Delete Then
                 RichTextBox1.Clear()
-                RichTextBox1.Text = message
+                If usetxt.Checked Then RichTextBox1.Text = message
             End If
             If e.KeyValue = 8 Then
                 If RichTextBox1.Text.Length > 273 Then
@@ -184,5 +210,48 @@ You can adjust the difficulty using the potentiometer.
         For i = 0 To UBound(myPort)
             ToolStripComboBox1.Items.Add(myPort(i))
         Next
+    End Sub
+    Private Sub ToolStripComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ToolStripComboBox2.SelectedIndexChanged
+        If ToolStripComboBox2.SelectedIndex = 0 Then
+            dscnt.Text = dscnt_srb
+            fontlbl.Text = fontlbl_srb
+            setbtn.Text = setbnt_srb
+            langlbl.Text = langlbl_srb
+            connlbl_nc_txt = connlbl_nc_srb
+            connlbl_no_txt = connlbl_no_srb
+            message = msg_srb
+            Me.Text = form_srb
+            PictureBox1.Image = My.Resources.morse_srb
+            usetxt.Text = usetxt_srb
+        Else
+            dscnt.Text = dscnt_en
+            fontlbl.Text = fontlbl_en
+            setbtn.Text = setbnt_en
+            langlbl.Text = langlbl_en
+            connlbl_nc_txt = connlbl_nc_en
+            connlbl_no_txt = connlbl_no_en
+            message = msg_en
+            Me.Text = form_en
+            PictureBox1.Image = My.Resources.morse_en
+            usetxt.Text = usetxt_en
+        End If
+        If SerialPort1.IsOpen Then
+            connlbl.Text = connlbl_no_txt
+        Else
+            connlbl.Text = connlbl_nc_txt
+        End If
+        If usetxt.Checked Then RichTextBox1.Text = message
+    End Sub
+
+    Private Sub usetxt_Click(sender As Object, e As EventArgs) Handles usetxt.Click
+        If Not usetxt.Checked Then
+            RichTextBox1.Clear()
+        Else
+            RichTextBox1.Text = message
+        End If
+    End Sub
+
+    Private Sub cpy_Click(sender As Object, e As EventArgs)
+        RichTextBox1.Copy()
     End Sub
 End Class
