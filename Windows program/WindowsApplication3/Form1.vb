@@ -241,6 +241,7 @@ Možete podesiti težinu koristeći potenciometar.
             connlbl.Text = connlbl_nc_txt
         End If
         If usetxt.Checked Then RichTextBox1.Text = message
+        RichTextBox1.Focus()
     End Sub
 
     Private Sub usetxt_Click(sender As Object, e As EventArgs) Handles usetxt.Click
@@ -249,9 +250,5 @@ Možete podesiti težinu koristeći potenciometar.
         Else
             RichTextBox1.Text = message
         End If
-    End Sub
-
-    Private Sub cpy_Click(sender As Object, e As EventArgs)
-        RichTextBox1.Copy()
     End Sub
 End Class
