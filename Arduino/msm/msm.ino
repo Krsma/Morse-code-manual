@@ -1,6 +1,7 @@
 #define buttonPin  2
 #define ledPin 6
 #define buzzer 9
+#define pot A0
 
 boolean buttonState, lastButtonState, cheker = false, linecheker = false;
 
@@ -19,10 +20,11 @@ void setup(){
   delay(200);
   digitalWrite(ledPin, LOW);
   noTone(buzzer);
+  
 }
 
 void loop() {
-  pause_value = map(analogRead(A0), 0, 1023, 70, 300);
+  pause_value = map(analogRead(pot), 0, 1023, 70, 300);
   buttonState = !digitalRead(buttonPin);
   
   if (buttonState && lastButtonState){
@@ -54,7 +56,7 @@ void loop() {
   else if (!buttonState && !lastButtonState){  
     pause++;
     if (( pause>3*pause_value ) && (cheker)){ 
-      print(morse);
+      translate();
       cheker = false;
       morse = "";
     }
@@ -66,81 +68,80 @@ void loop() {
   lastButtonState = buttonState;
   delay(1);
 }
-void print(String translate){
+void translate(){
   
-  if (translate=="*-")
+  if (morse=="*-")
     Serial.print("A");
-  else if (translate=="-***")  
+  else if (morse=="-***")  
     Serial.print("B");
-  else if (translate=="-*-*")  
+  else if (morse=="-*-*")  
     Serial.print("C");
-  else if (translate=="-**")  
+  else if (morse=="-**")  
     Serial.print("D");
-  else if (translate=="*")  
+  else if (morse=="*")  
     Serial.print("E");
-  else if (translate=="**-*")  
+  else if (morse=="**-*")  
     Serial.print("F");
-  else if (translate=="--*")  
+  else if (morse=="--*")  
     Serial.print("G");
-  else if (translate=="****")  
+  else if (morse=="****")  
     Serial.print("H");
-  else if (translate=="**")  
+  else if (morse=="**")  
     Serial.print("I");
-  else if (translate=="*---")  
+  else if (morse=="*---")  
     Serial.print("J");
-  else if (translate=="-*-")  
+  else if (morse=="-*-")  
     Serial.print("K");
-  else if (translate=="*-**")  
+  else if (morse=="*-**")  
     Serial.print("L");
-  else if (translate=="--")  
+  else if (morse=="--")  
     Serial.print("M");
-  else if (translate=="-*")  
+  else if (morse=="-*")  
     Serial.print("N");
-  else if (translate=="---")  
+  else if (morse=="---")  
     Serial.print("O");
-  else if (translate=="*--*")  
+  else if (morse=="*--*")  
     Serial.print("P");
-  else if (translate=="--*-")  
+  else if (morse=="--*-")  
     Serial.print("Q");
-  else if (translate=="*-*")  
+  else if (morse=="*-*")  
     Serial.print("R");
-  else if (translate=="***")  
+  else if (morse=="***")  
     Serial.print("S");
-  else if (translate=="-")  
+  else if (morse=="-")  
     Serial.print("T");
-  else if (translate=="**-")  
+  else if (morse=="**-")  
     Serial.print("U");
-  else if (translate=="***-")  
+  else if (morse=="***-")  
     Serial.print("V");
-  else if (translate=="*--")  
+  else if (morse=="*--")  
     Serial.print("W");
-  else if (translate=="-**-")  
+  else if (morse=="-**-")  
     Serial.print("X");
-  else if (translate=="-*--")  
+  else if (morse=="-*--")  
     Serial.print("Y");
-  else if (translate=="--**")  
+  else if (morse=="--**")  
     Serial.print("Z");
 
-  else if (translate=="*----")  
+  else if (morse=="*----")  
     Serial.print("1");
-  else if (translate=="**---")  
+  else if (morse=="**---")  
     Serial.print("2");
-  else if (translate=="***--")  
+  else if (morse=="***--")  
     Serial.print("3");
-  else if (translate=="****-")  
+  else if (morse=="****-")  
     Serial.print("4");
-  else if (translate=="*****")  
+  else if (morse=="*****")  
     Serial.print("5");
-  else if (translate=="-****")
+  else if (morse=="-****")
     Serial.print("6");
-  else if (translate=="--***")  
+  else if (morse=="--***")  
     Serial.print("7");
-  else if (translate=="---**")  
+  else if (morse=="---**")  
     Serial.print("8");
-  else if (translate=="----*")  
+  else if (morse=="----*")  
     Serial.print("9");
-  else if (translate=="-----")  
+  else if (morse=="-----")  
     Serial.print("0");
-  
-  translate=""; 
+
 }
