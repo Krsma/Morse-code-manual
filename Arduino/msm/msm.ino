@@ -29,7 +29,7 @@ void loop() {
   
   if (buttonState && lastButtonState){
     signal_length++;       
-    if (signal_length<2*pause_value){
+    if (signal_length < 2*pause_value){
     tone(buzzer, 1500);
     digitalWrite(ledPin, HIGH);
     }
@@ -40,27 +40,27 @@ void loop() {
   }
   
   else if(!buttonState && lastButtonState){
-     if (signal_length>50 && signal_length<2*pause_value ) morse += dot;
-      else if (signal_length>2*pause_value) morse += dash;
-    signal_length=0; 
+     if (signal_length > 50 && signal_length < 2*pause_value) morse += dot;
+      else if (signal_length > 2*pause_value) morse += dash;
+    signal_length = 0; 
     digitalWrite(ledPin, LOW); 
     noTone(buzzer); 
   }
  
   else if(buttonState && !lastButtonState){
-    pause=0; 
+    pause = 0; 
     cheker = true;
     linecheker = true;
   }
   
   else if (!buttonState && !lastButtonState){  
     pause++;
-    if (( pause>3*pause_value ) && (cheker)){ 
+    if (pause > 3*pause_value && cheker){ 
       translate();
       cheker = false;
       morse = "";
     }
-    if ((pause>15*pause_value) && (linecheker)){
+    if ((pause > 15*pause_value) && linecheker){
       linecheker = false;
     }
   }
@@ -68,6 +68,7 @@ void loop() {
   lastButtonState = buttonState;
   delay(1);
 }
+
 void translate(){
   
   if (morse=="*-")
