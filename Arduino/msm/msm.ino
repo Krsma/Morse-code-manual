@@ -31,7 +31,7 @@ void loop() {
     signal_length++;       
     if (signal_length<2*pause_value){
     tone(buzzer, 1500);
-    analogWrite(ledPin, 255);
+    digitalWrite(ledPin, HIGH);
     }
     else{
       tone(buzzer, 1000);
