@@ -1,0 +1,20 @@
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\bin\Debug\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\bin\Debug\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\bin\Debug\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\obj\Debug\msm.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\obj\Debug\mcm.Form1.resources
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\obj\Debug\mcm.Resources.resources
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\obj\Debug\msm.vbproj.GenerateResource.Cache
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\obj\Debug\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\obj\Debug\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\Projekti\msm\WindowsApplication3\obj\Debug\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\obj\Debug\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\obj\Debug\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\obj\Debug\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\bin\Debug\Morse Code Machine.exe
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\bin\Debug\Morse Code Machine.pdb
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\bin\Debug\Morse Code Machine.xml
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\obj\Debug\msm.vbprojResolveAssemblyReference.cache
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\obj\Debug\mcm.Form1.resources
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\obj\Debug\mcm.Resources.resources
+C:\Users\larigoldman\Desktop\Projekti\msm\Windows application\WindowsApplication3\obj\Debug\msm.vbproj.GenerateResource.Cache

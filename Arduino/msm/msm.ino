@@ -3,7 +3,7 @@
 #define buzzer 9
 #define pot A0
 
-boolean buttonState, lastButtonState, cheker = false, linecheker = false;
+bool buttonState, lastButtonState, cheker = false, linecheker = false, longclick = true;
 
 int pause_value, signal_length = 0, pause = 0;
 
@@ -26,6 +26,8 @@ void setup(){
 void loop() {
   pause_value = map(analogRead(pot), 0, 1023, 70, 300);
   buttonState = !digitalRead(buttonPin);
+
+  if(Serial.available() > 0) longclick = (Serial.read() == 't') ? true : false;
   
   if (buttonState && lastButtonState){
     signal_length++;       
@@ -33,14 +35,14 @@ void loop() {
     tone(buzzer, 1500);
     digitalWrite(ledPin, HIGH);
     }
-    else{
+    else if(longclick){
       tone(buzzer, 1000);
       analogWrite(ledPin, 50);
       }
   }
   
   else if(!buttonState && lastButtonState){
-     if (signal_length > 50 && signal_length < 2*pause_value) morse += dot;
+     if (signal_length > 50 && signal_length < 2*pause_value ) morse += dot;
       else if (signal_length > 2*pause_value) morse += dash;
     signal_length = 0; 
     digitalWrite(ledPin, LOW); 
@@ -60,7 +62,7 @@ void loop() {
       cheker = false;
       morse = "";
     }
-    if (pause > 15*pause_value && linecheker){
+    if ((pause > 15*pause_value) && linecheker){
       linecheker = false;
     }
   }
@@ -146,3 +148,4 @@ void translate(){
     Serial.print("0");
 
 }
+
