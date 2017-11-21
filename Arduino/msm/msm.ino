@@ -7,7 +7,9 @@ bool buttonState, lastButtonState, cheker = false, linecheker = false, longclick
 
 int pause_value, signal_length = 0, pause = 0;
 
-String morse;
+String database[36]={"*-","-***","-*-*","-**","*","**-*","--*","****","**","*---","-*-","*-**","--","-*","---","*--*","--*-","*-*","***","-","**-","***-","*--","-**-","-*--","--**","*----","**---","***--","****-","*****","-****","--***","---**","----*","-----"};
+//array which is latter used for conversion to char
+String morse="";
 char dash = '-', dot = '*';
 
 void setup(){
@@ -24,10 +26,10 @@ void setup(){
 }
 
 void loop() {
-  pause_value = map(analogRead(pot), 0, 1023, 70, 300);
+  pause_value = map(analogRead(pot), 0, 1023, 70, 300); 
   buttonState = !digitalRead(buttonPin);
 
-  if(Serial.available() > 0) longclick = (Serial.read() == 't') ? true : false;
+  if(Serial.available() > 0) longclick = (Serial.read() == 't') ? true : false; //checking if the sound-disable button is on
   
   if (buttonState && lastButtonState){
     signal_length++;       
@@ -58,7 +60,7 @@ void loop() {
   else if (!buttonState && !lastButtonState){  
     pause++;
     if (pause > 3*pause_value && cheker){ 
-      translate();
+      translate(morse);
       cheker = false;
       morse = "";
     }
@@ -71,81 +73,27 @@ void loop() {
   delay(1);
 }
 
-void translate(){
-  
-  if (morse=="*-")
-    Serial.print("A");
-  else if (morse=="-***")  
-    Serial.print("B");
-  else if (morse=="-*-*")  
-    Serial.print("C");
-  else if (morse=="-**")  
-    Serial.print("D");
-  else if (morse=="*")  
-    Serial.print("E");
-  else if (morse=="**-*")  
-    Serial.print("F");
-  else if (morse=="--*")  
-    Serial.print("G");
-  else if (morse=="****")  
-    Serial.print("H");
-  else if (morse=="**")  
-    Serial.print("I");
-  else if (morse=="*---")  
-    Serial.print("J");
-  else if (morse=="-*-")  
-    Serial.print("K");
-  else if (morse=="*-**")  
-    Serial.print("L");
-  else if (morse=="--")  
-    Serial.print("M");
-  else if (morse=="-*")  
-    Serial.print("N");
-  else if (morse=="---")  
-    Serial.print("O");
-  else if (morse=="*--*")  
-    Serial.print("P");
-  else if (morse=="--*-")  
-    Serial.print("Q");
-  else if (morse=="*-*")  
-    Serial.print("R");
-  else if (morse=="***")  
-    Serial.print("S");
-  else if (morse=="-")  
-    Serial.print("T");
-  else if (morse=="**-")  
-    Serial.print("U");
-  else if (morse=="***-")  
-    Serial.print("V");
-  else if (morse=="*--")  
-    Serial.print("W");
-  else if (morse=="-**-")  
-    Serial.print("X");
-  else if (morse=="-*--")  
-    Serial.print("Y");
-  else if (morse=="--**")  
-    Serial.print("Z");
+void translate(String text){  //more efficient managment of string to letter conversion
+  int slovo=0;
+  for (int i = 1; i<35; i++)
+    {
+      if (text == database[i])  //comparing ascci values with position in a defined array
+      {
+         if (i<26)        
+              slovo=65+i;
+          
+         else if (i>26) 
+              slovo=48+i-27;
+         
+         break; 
+      }
+    }
+    text = char(slovo);  // conversion from int to char
+    Serial.print(text);
+    Serial.print(" ");
 
-  else if (morse=="*----")  
-    Serial.print("1");
-  else if (morse=="**---")  
-    Serial.print("2");
-  else if (morse=="***--")  
-    Serial.print("3");
-  else if (morse=="****-")  
-    Serial.print("4");
-  else if (morse=="*****")  
-    Serial.print("5");
-  else if (morse=="-****")
-    Serial.print("6");
-  else if (morse=="--***")  
-    Serial.print("7");
-  else if (morse=="---**")  
-    Serial.print("8");
-  else if (morse=="----*")  
-    Serial.print("9");
-  else if (morse=="-----")  
-    Serial.print("0");
+  
+  
 
 }
 
