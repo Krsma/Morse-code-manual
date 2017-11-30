@@ -26,7 +26,7 @@ void setup(){  //initial values setup
 }
 
 void loop() {
-  pause_value = map(analogRead(pot), 0, 1023, 70, 300); //setting up the pause_value variable via a potentiometer
+  pause_value = map(analogRead(pot), 1023, 0, 70, 300); //setting up the pause_value variable via a potentiometer
   buttonState = !digitalRead(buttonPin); //inverting the value of buttonpin due to using input pullup with the button
                                        
   if(Serial.available() > 0) longclick = (Serial.read() == 't') ? true : false; //checking if the sound-disable button is on
@@ -78,10 +78,8 @@ void loop() {
 
 void translate(String text){  //more efficient managment of string to letter conversion
   int slovo=0;
-  for (int i = 1; i<35; i++)
-    {
-      if (text == database[i])  //comparing ascci values with position in a defined array
-      {
+  for (int i = 1; i < 35; i++){
+      if (text == database[i]){  //comparing ascci values with position in a defined array
          if (i<26)        //this if block exists due to the ASCII encoding 
               slovo=65+i;
           
@@ -91,8 +89,6 @@ void translate(String text){  //more efficient managment of string to letter con
          break; 
       }
     }
-    text = char(slovo);  // conversion from int to char
-    Serial.print(text);
-    Serial.print(" ");
+    Serial.print((char)slovo);
 }
 
