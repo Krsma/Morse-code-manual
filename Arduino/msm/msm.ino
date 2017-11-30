@@ -95,7 +95,7 @@ void translate(String text){  //more efficient managment of string to letter con
               slovo=65+i;
           
          else if (i>26) 
-              slovo=48+i-25;
+              slovo=23+i;
               
          break; 
       }
