@@ -78,7 +78,13 @@ void loop() {
 
 void translate(String text){  //more efficient managment of string to letter conversion
   int slovo=0;
-  for (int i = 1; i < 35; i++){
+  for (int i = 1; i < 35; i++)
+  {
+      if (text=="*-")  //ugly bodge but it works
+      {
+        slovo='a';
+        break;
+        }
       if (text == database[i]){  //comparing ascci values with position in a defined array
          if (i<26)        //this if block exists due to the ASCII encoding 
               slovo=65+i;
