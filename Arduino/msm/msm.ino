@@ -82,16 +82,21 @@ void translate(String text){  //more efficient managment of string to letter con
   {
       if (text=="*-")  //ugly bodge but it works
       {
-        slovo='a';
+        slovo='A';
         break;
         }
+        if (text=="-----")  //i am krsma i dont know where to put curly brakes
+              {
+                slovo='0';
+                break;
+              }
       if (text == database[i]){  //comparing ascci values with position in a defined array
          if (i<26)        //this if block exists due to the ASCII encoding 
               slovo=65+i;
           
          else if (i>26) 
-              slovo=48+i-27;
-         
+              slovo=48+i-25;
+              
          break; 
       }
     }
